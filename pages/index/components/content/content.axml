@@ -1,0 +1,23 @@
+<!-- <view style="height: 100vh; overflow-y:hidden;"> -->
+<scroll-view class="content-box" scroll-y="{{true}}" style="height: 100%">
+  <view style="height:calc(100vw+10rpx);">
+    <!-- 背面打底 (走路赚租币) -->
+    <content-top 
+      onChangePopupStatus="changePopupStatus"
+      userMoney={{userMoney}}
+    />
+    <!-- popup -->
+    <view class="list" scroll-y="true">
+      <!-- 头部箭头 -->
+      <view class="nail"></view>
+      <pay-money></pay-money>
+      <recommend></recommend>
+    </view>
+    <my-popup 
+      isShow={{isShowPopup}}
+      onChangePopupStatus="changePopupStatus"
+      onAddUserMoney="addUserMoney"
+    />
+  </view>
+</scroll-view>
+<!-- </view> -->

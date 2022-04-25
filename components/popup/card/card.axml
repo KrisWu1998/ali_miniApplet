@@ -1,0 +1,11 @@
+<view class="item">
+  <view class="circle" style={{background: info.color}}></view>
+  <view class="label">
+    {{ info.label }}
+  </view>
+  <view class={{info.isGet ? 'item-button disable' : 'item-button'}} onTap="handleChangeStatus">
+    {{
+      info.isGet ? '已领取' : `+${info.addMoney}租币`
+    }}
+  </view>
+</view>

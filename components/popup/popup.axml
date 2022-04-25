@@ -1,0 +1,39 @@
+<popup
+  show="{{isShow}}"
+  disableScroll={{false}}
+  position="bottom"
+  zIndex="999"
+  className="myPopup"
+>
+  <view class="top">
+    <view class="title">天天做任务赚翻租币</view>
+    <view class="tips">
+      已获得
+      <text class="money">{{ moneyNum }}</text>
+      个租币，租币可兑换商品
+    </view>
+    <view class="close" onTap="handleClose">
+      <view class="square"></view>
+    </view>
+  </view>
+  <scroll-view class="content-wrap" scroll-y="true">
+    <view
+      a:for="{{list}}"
+      a:for-item="item"
+      class="wrap-block"
+    >
+      <view class="title">
+        {{item.label}}
+      </view>
+      <item-card
+        a:for="{{(item.child || [])}}"
+        a:for-item="childItem"
+        a:for-index="childIndex"
+        info={{childItem}}
+        parentIndex={{ index }}
+        childIndex={{ childIndex }}
+        onConfirm="setGetMoneyStatus"
+      />
+    </view>
+  </scroll-view >
+</popup>

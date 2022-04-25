@@ -1,0 +1,41 @@
+.myMessage-box {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+/* 选项卡 */
+.myMessage-box .myMessage-tabs-wrap{
+  width: 100%;
+  padding: 30rpx 30rpx 20rpx 30rpx;
+  background: #FFF;
+  box-sizing: border-box;
+}
+/* 操作区 */
+.myMessage-box .handle-box {
+  display: flex;
+  padding: 30rpx;
+  font-size: 24rpx;
+  color: rgba(153, 153, 153, 1);
+  background: rgba(247, 248, 249, 1);
+}
+.myMessage-box .handle-box .handle-item {
+  margin-right: 29rpx;
+  padding-right: 29.6rpx;
+  border-right: 2rpx solid rgba(217, 217, 217, 1);
+}
+.myMessage-box .handle-box .handle-item:nth-last-child(1) {
+  padding-left: 0;
+  border-right: none;
+}
+.myMessage-box .handle-box .handle-item .handle-item-icon {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 4rpx;
+}
+/* 内容去 */
+.myMessage-box .myMessage-content-wrap {
+  flex: 1;
+  overflow-y: auto;
+  white-space: nowrap;
+  background: #FFF;
+}

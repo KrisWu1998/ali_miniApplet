@@ -1,0 +1,14 @@
+<view class="payMoney-container">
+  <view class="title">
+    租币当钱花
+  </view>
+  <scroll-view class="list-wrap" scroll-x="{{true}}">
+    <image
+      a:for="{{list}}"
+      a:for-item="item"
+      mode="aspectFit"
+      src={{ item }}
+      class="item"
+    />
+  </scroll-view>
+</view>

@@ -1,0 +1,100 @@
+<view class="header-box">
+  <view class="top-left">
+    <!-- 消息 -->
+    <image
+      class="left-icon"
+      style={{
+        top: '30rpx'
+      }}
+      src="/assets/img/message.png"
+      mode="aspectFit"
+      onTap="handleTap"
+    >
+    </image>
+    <!-- 规则 -->
+    <image
+      class="left-icon"
+      style={{
+        top: '120rpx' 
+      }}
+      src="/assets/img/rule.png"
+      mode="aspectFit"
+    >
+    </image>
+  </view>
+  <view class="top-right">
+    <!-- 金币 -->
+    <view 
+      class="bartype"
+      style={{
+        top: '40rpx',
+        fontSize: '32rpx'
+      }}
+    >
+      <image
+        class="icon-money"
+        src="/assets/img/money.png"
+        mode="aspectFit"
+      />
+      {{ info.money }}
+    </view>
+    <!-- 签到 -->
+    <view 
+      class="bartype"
+      style={{
+        top: '124rpx'
+      }}  
+    >
+      <image 
+        class="icon-signIn"
+        src="/assets/img/signIn.png"
+        mode="aspectFit"
+      />
+      已签到
+    </view>
+  </view>
+  <view class="top-mid">
+    <!-- 金币领取提示球 -->
+    <view class="money-wrap">
+      <view
+        a:for="{{addMoneyList}}"
+        a:for-item="item"
+        a:for-index="index"
+        class={{
+          index !== 0 ? 'tip-ele m-l' : 'tip-ele'
+        }}
+        style={{
+          marginTop: index === 0 || addMoneyList.length === index + 1 ? '72rpx' : (index === 2 ? '14rpx' : 0)
+        }}
+      >
+        {{ item.label }}
+        <image
+          class="img"
+          mode="aspectFit"
+          src={{ item.url }} 
+        />
+      </view>
+    </view>
+    <!-- 步数 -->
+    <view class="step-wrap"> 
+      <view class="circle">
+        <view class="today">今日步数</view>
+        <view class="stepNum">{{ stepNum }}</view>
+        <view class="tips">每日24:00自动清零</view>
+      </view>
+      <image
+        class="boy"
+        mode="aspectFit"
+        src="/assets/img/boy.png"
+      />
+      <image
+        class="girl"
+        mode="aspectFit"
+        src="/assets/img/girl.png"
+      />
+      <view class="step-button">
+        瓜分888现金
+      </view>
+    </view>
+  </view>
+</view>

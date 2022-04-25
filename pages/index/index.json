@@ -1,0 +1,8 @@
+{
+  "defaultTitle": "运动步数",
+  "component": true,
+  "usingComponents": {
+     "header": "./components/header/header",
+     "content": "./components/content/content"
+   }
+}

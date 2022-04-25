@@ -1,0 +1,12 @@
+<view class="reset-tabs-wrap">
+  <view
+    a:for="{{tabs}}"
+    a:for-item="tabsItem"
+    a:for-index="tabsIndex"
+    class="{{[`reset-tabs-item ${tabsItem.number ? 'hasMsg': ''} ${activeIndex == tabsIndex ? 'active' : ''}`]}}"
+    onTap="handleChangeActiveIndex"
+    data-tabsIndex="{{tabsIndex}}"
+  >
+    {{ tabsItem.title }}
+  </view>
+</view>

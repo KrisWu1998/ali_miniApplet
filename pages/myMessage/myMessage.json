@@ -1,0 +1,7 @@
+{
+  "defaultTitle": "消息",
+  "usingComponents": {
+    "my-tabs": "/components/tabs/tabs",
+    "message-item-card": "/components/myMessage/messageItem/messageItem"
+  }
+}

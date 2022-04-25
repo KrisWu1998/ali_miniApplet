@@ -1,0 +1,34 @@
+.content-box {
+  /* position: fixed; */
+  position: relative;
+  z-index: 99;
+  width: 100%;
+  padding-top: 718rpx;
+  white-space: nowrap;
+  -webkit-overflow-scrolling:touch;
+}
+.content-box::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.content-box .list {
+  position: relative;
+  z-index: 99;
+  /* height: 4000rpx; */
+  height: auto;
+  /* padding: 60rpx 0; */
+  /* background: #F7F8F9; */
+  border-radius: 48rpx 48rpx 0 0;
+  overflow: hidden;
+}
+.content-box .list .nail {
+  position: absolute;
+  top: 20rpx;
+  left: 50%;
+  width: 60rpx;
+  height: 10rpx;
+  margin-left: -30rpx;
+  background: #E2E2E2;
+  border-radius: 5rpx;
+}

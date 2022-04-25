@@ -1,0 +1,38 @@
+<view class="recommend-container">
+  <view class="title">租物推荐</view>
+  <view
+    class="list-wrap"
+  >
+    <view 
+      a:for="{{list}}"
+      a:for-item="item"
+      class="item" 
+    >
+      <image
+        mode="aspectFit"
+        src={{ item.url }}
+        class="img" 
+      />
+      <view class="item-bottom">
+        <view class="title">{{ item.title }}</view>
+        <view>
+          <view class="tags">{{ item.tags }}</view>
+        </view>
+        <view class="base">
+          <text class="money">￥{{ item.money }}/天 </text>
+          <text class="day">{{ item.day }}天起租</text>
+        </view>
+      </view>
+    </view>
+    <view class="bottom">
+      <view a:if="{{ loading }}">loading...</view>
+      <view a:else class="more" onTap="handleMore">
+        查看更多
+        <image 
+          style="width: 16rpx; height: 26rpx; margin-left: 10rpx"
+          src="/assets/img/arrows_right.png" 
+        />
+      </view>
+    </view>
+  </view>
+</view>

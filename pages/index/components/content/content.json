@@ -1,0 +1,9 @@
+{
+  "component": true,
+  "usingComponents": { 
+    "content-top": "/components/index/content/top/top",
+    "pay-money": "/components/index/content/payMoney/payMoney",
+    "recommend": "/components/index/content/recommend/recommend",
+    "my-popup": "/components/popup/popup"
+  }
+}

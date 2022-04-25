@@ -1,0 +1,22 @@
+.payMoney-container {
+  padding: 60rpx 30rpx 30rpx 30rpx;
+  background: #FFF;
+}
+.payMoney-container .title {
+  margin-bottom: 30rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #222222;
+}
+.payMoney-container .list-wrap {
+  width: 100%;
+  white-space: nowrap;
+}
+.payMoney-container .list-wrap .item {
+  width: 200rpx;
+  height: 240rpx;
+  margin-right: 10rpx;
+}
+.payMoney-container .list-wrap .item:nth-last-child(1) {
+  margin-right: 0;
+}
