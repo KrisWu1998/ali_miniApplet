@@ -1,0 +1,15 @@
+.empty {
+  width: 100%;
+  padding: 100rpx 215rpx 0 215rpx;
+  box-sizing: border-box;
+}
+.empty>.empty-imgae {
+  width: 320rpx;
+  height: 320rpx;
+}
+.empty>.empty-content {
+  width: 100%;
+  font-size: 32rpx;
+  color: #999999;
+  text-align: center;
+}

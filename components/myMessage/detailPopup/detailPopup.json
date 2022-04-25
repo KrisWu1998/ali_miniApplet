@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": { 
+    "popup": "../../../node_modules/mini-ali-ui/es/popup/index"
+  }
+}

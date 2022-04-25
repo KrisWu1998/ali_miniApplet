@@ -2,6 +2,9 @@
   "defaultTitle": "消息",
   "usingComponents": {
     "my-tabs": "/components/tabs/tabs",
-    "message-item-card": "/components/myMessage/messageItem/messageItem"
+    "message-item-card": "/components/myMessage/messageItem/messageItem",
+    "empty-page": "/components/empty/empty",
+    "modal": "../../node_modules/mini-ali-ui/es/modal/index",
+    "detail-popup": "/components/myMessage/detailPopup/detailPopup"
   }
 }

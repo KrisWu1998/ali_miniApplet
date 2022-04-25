@@ -1,24 +1,29 @@
-<view class="messageItem-card-wrap">
+<view class="messageItem-card-wrap" onTap="confirm">
   <view class="messageItem-box">
     <view class="messageItem-box-left">
       <image 
         mode="aspectFit"
-        src="/assets/img/message-tips.png"
-        style="width: 100%; height: 100%"
+        src="{{ iconUrl }}"
+        style="width: 48rpx; height: 48rpx"
       >
       </image>
+      <view 
+        a:if="{{!info.isRead}}"
+        class="messageItem-box-left-icon" 
+      />
     </view>
-    <view class="messageItem-box-mid">
-      <view
-        class="messageItem-box-mid-title"
-      >活动通知</view>
-      <view
-        class="messageItem-box-mid-notify"
-      >恭喜获得20个租币，请查收</view>
-    </view>
-
     <view class="messageItem-box-right">
-      2020-03-23 14:30
+      <view class="item-box-r-top">
+        <text class="item-box-r-t-left">
+          {{ info.title }}
+        </text>
+        <text class="item-box-r-t-right">
+          {{ info. time}}
+        </text>
+      </view>
+      <view class="item-box-r-bottom">
+        {{ info.content }}
+      </view>
     </view>
   </view>
 </view>

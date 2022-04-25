@@ -32,10 +32,33 @@
   height: 24rpx;
   margin-right: 4rpx;
 }
-/* 内容去 */
+/* 内容区 */
 .myMessage-box .myMessage-content-wrap {
   flex: 1;
   overflow-y: auto;
   white-space: nowrap;
   background: #FFF;
+}
+/* modal提示 -- 已读 */
+.message-modal {
+  width: 540rpx;
+}
+.message-modal .am-modal-content {
+  padding: 50rpx 32rpx 76rpx 32rpx;
+}
+.message-modal .am-modal-body {
+  width: 476rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #333333;
+  text-align: center;
+}
+.message-modal .am-modal-buttons {
+  font-size: 36rpx;
+}
+.message-modal .modal-remove {
+  color: #999999;
+}
+.message-modal .modal-cancel {
+  color: #00C8BE;
 }

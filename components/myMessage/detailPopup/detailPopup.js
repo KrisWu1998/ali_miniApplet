@@ -2,23 +2,23 @@ Component({
   mixins: [],
   data: {},
   props: {
-    iconUrl: {
-      type: String,
-      default: ''
+    isShow: {
+      type: Boolean,
+      default: true
     },
     info: {
       type: Object,
       default: () => ({})
     },
-    onHandleDetail: () => {}
+    onConfirm: () => {}
   },
   didMount() {},
   didUpdate() {},
   didUnmount() {},
   methods: {
-    confirm () {
-      const { info, onHandleDetail } = this.props;
-      onHandleDetail(info);
+    handleClose () {
+      const { onConfirm } = this.props;
+      onConfirm(false)
     }
   },
 });

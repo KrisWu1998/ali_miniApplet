@@ -1,8 +1,8 @@
 <view class="myMessage-box">
   <view class="myMessage-tabs-wrap">
     <my-tabs
-      tabs="{{tabs}}"
-      activeIndex="{{activeIndex}}"
+      tabs="{{ tabs }}"
+      activeIndex="{{ activeIndex }}"
       onChange="tabsActiveChange"
     />
   </view>
@@ -11,6 +11,7 @@
       a:for="{{handleList}}"
       a:for-item="item"
       class="handle-item"
+      onTap="beforeClear"
     >
       <image 
         mode="scaleToFill"
@@ -20,9 +21,51 @@
       {{ item.label }}
     </view>
   </view>
-  <view class="myMessage-content-wrap">
-    <message-item-card />
-    <message-item-card />
-    <message-item-card />
+  <view 
+    a:for="{{tabs}}"
+    a:for-item="tabsItem"
+    a:for-index="tabsIndex"
+    a:if="{{ activeIndex === tabsIndex }}"
+    class="myMessage-content-wrap"
+  >
+    <view
+      a:if="{{ globalData[tabsItem.id].length }}"
+    >
+      <message-item-card
+        a:for="{{ globalData[tabsItem.id] }}"
+        a:for-item="itemInfo"
+        a:for-index="itemIndex"
+        info={{ itemInfo }}
+        iconUrl={{ iconUrlList[tabsItem.id] }}
+        onHandleDetail="handleDetail"
+      />
+    </view>
+    <empty-page
+      a:else
+    />
   </view>
+  <modal
+		show="{{ isShowModal }}"
+    showClose="{{ false }}"
+    onButtonClick="onButtonClick"
+    buttons="{{ [
+      {
+        text: '确认已读',
+        extClass: 'modal-remove'
+      },
+      {
+        text: '取消',
+        extClass: 'modal-cancel'
+      }
+    ]
+    }}"
+    class="message-modal"
+	>
+		是否确认要已读全部通知
+  </modal>
+  <detail-popup
+    isShow={{ isShowDetail }}
+    info={{ currentDetailInfo }}
+    onConfirm="changePopupStatus"
+  />
 </view>

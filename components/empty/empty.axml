@@ -1,0 +1,10 @@
+<view class="empty">
+  <image 
+    mode="aspectFit"
+    src="/assets/img/empty.png"
+    class="empty-imgae"
+  />
+  <view class="empty-content">
+    暂无消息
+  </view>
+</view>
