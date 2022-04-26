@@ -1,7 +1,9 @@
 .myMessage-box {
   display: flex;
   flex-direction: column;
+  /*position: relative; */
   height: 100vh;
+  /* overflow: auto; */
 }
 /* 选项卡 */
 .myMessage-box .myMessage-tabs-wrap{
@@ -38,6 +40,13 @@
   overflow-y: auto;
   white-space: nowrap;
   background: #FFF;
+}
+.myMessage-box .myMessage-content-wrap .no-more {
+  display: flex;
+	justify-content: center;
+	margin-top: 40rpx;
+	font-size: 24rpx;
+	color: #999999;
 }
 /* modal提示 -- 已读 */
 .message-modal {

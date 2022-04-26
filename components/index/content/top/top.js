@@ -43,8 +43,17 @@ Component({
     handlePopup () {
       this.props.onChangePopupStatus();
     },
+    // 跳转 我的消息
     goMessagePage () {
-      my.navigateTo({ url: "/pages/myMessage/myMessage" })
+      my.navigateTo({ 
+        url: "/pages/myMessage/myMessage"
+      })
+    },
+    // 跳转 租币商城
+    handleGoShop () {
+      my.navigateTo({
+        url: "/pages/shop/shop"
+      })
     }
   },
 });

@@ -11,7 +11,8 @@
       a:for="{{handleList}}"
       a:for-item="item"
       class="handle-item"
-      onTap="beforeClear"
+      onTap="handleRead"
+      data-index="{{index}}"
     >
       <image 
         mode="scaleToFill"
@@ -39,15 +40,16 @@
         iconUrl={{ iconUrlList[tabsItem.id] }}
         onHandleDetail="handleDetail"
       />
+      <!-- <view class="no-more">没有更多了</view> -->
     </view>
     <empty-page
       a:else
     />
   </view>
   <modal
-		show="{{ isShowModal }}"
+		show="{{ isShowReadModal }}"
     showClose="{{ false }}"
-    onButtonClick="onButtonClick"
+    onButtonClick="onButtonClick_read"
     buttons="{{ [
       {
         text: '确认已读',
@@ -62,6 +64,25 @@
     class="message-modal"
 	>
 		是否确认要已读全部通知
+  </modal>
+  <modal
+		show="{{ isShowDeleteModal }}"
+    showClose="{{ false }}"
+    onButtonClick="onButtonClick_delete"
+    buttons="{{ [
+      {
+        text: '确认删除',
+        extClass: 'modal-remove'
+      },
+      {
+        text: '取消',
+        extClass: 'modal-cancel'
+      }
+    ]
+    }}"
+    class="message-modal"
+	>
+		是否确认要删除已读通知
   </modal>
   <detail-popup
     isShow={{ isShowDetail }}

@@ -9,12 +9,37 @@
   font-weight: bold;
   color: #105B50;
 }
+.content-top>.top-left {
+  display: inline-flex;
+  flex-direction: column;
+  position: fixed;
+  top: 30rpx;
+  left: 20rpx;
+}
 /* 左侧 */
-.top-left .left-icon {
-  position: absolute;
+.content-top>.top-left>.left-icon {
+  position: relative;
   width: 56rpx;
   height: 72rpx;
-  left: 20rpx;
+  margin-top: 18rpx;
+}
+.content-top>.top-left>.left-icon:nth-child(1) {
+  margin-top: 0;
+}
+.content-top>.top-left>.left-icon>.tips-num {
+  position: absolute;
+  top: -10rpx;
+  right: -10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24rpx;
+  height: 24rpx;
+  font-size: 16rpx;
+  color: #FFF;
+  background: #FF876A;
+  border: 2rpx solid #FFF;
+  border-radius: 50%;
 }
 /* 右侧 */
 .top-right .bartype{

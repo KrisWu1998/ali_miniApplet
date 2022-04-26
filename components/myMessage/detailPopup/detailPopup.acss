@@ -7,14 +7,12 @@
   border-top-right-radius: 30rpx;
 }
 .message-popup>.am-popup-content>.message-detail-content {
-  /* height: calc(100% - 75rpx - 44rpx - 100rpx); */
   flex: 1;
   padding: 75rpx 30rpx 44rpx 30rpx;
-  /* max-height: 637rpx; */
   box-sizing: border-box;
   overflow: scroll;
 }
-.message-popup>.am-popup-content>.message-detail-content .message-detail-content-titl {
+.message-popup>.am-popup-content>.message-detail-content .message-detail-content-title {
   font-size: 36rpx;
   color: #333333;
 }

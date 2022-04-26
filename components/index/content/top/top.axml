@@ -1,26 +1,29 @@
 <view class="content-top">
   <view class="top-left">
     <!-- 消息 -->
-    <image
-      class="left-icon"
-      style={{
-        top: '30rpx'
-      }}
-      src="/assets/img/message.png"
-      mode="aspectFit"
-      onTap="goMessagePage"
-    >
-    </image>
+    <view class="left-icon">
+      <image
+        style="width: 56rpx; height: 72rpx"
+        src="/assets/img/message.png"
+        mode="aspectFit"
+        onTap="goMessagePage"
+      >
+      </image>
+      <view
+        class="tips-num"
+      >
+        2
+      </view>
+    </view>
     <!-- 规则 -->
-    <image
-      class="left-icon"
-      style={{
-        top: '120rpx' 
-      }}
-      src="/assets/img/rule.png"
-      mode="aspectFit"
-    >
-    </image>
+    <view class="left-icon">
+      <image
+        style="width: 56rpx; height: 72rpx"
+        src="/assets/img/rule.png"
+        mode="aspectFit"
+      >
+      </image>
+    </view>
   </view>
   <view class="top-right">
     <!-- 金币 -->
@@ -93,7 +96,7 @@
         mode="aspectFit"
         src="/assets/img/girl.png"
       />
-      <view class="step-button">
+      <view class="step-button" onTap="handleGoShop">
         瓜分888现金
       </view>
     </view>

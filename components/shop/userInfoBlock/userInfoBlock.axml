@@ -1,0 +1,48 @@
+<view class="userInfo-box">
+  <!-- 第一行 /  头像 规则 -->
+  <view class="userInfo-top">
+    <view class="userInfo-top-left">
+      <image
+        mode="aspectFit"
+        src={{ userInfo.avatar }}
+        class="userInfo-avatar"
+      />
+      <view class="userInfo-tags">
+        租币当钱花
+      </view>
+    </view>
+    <view class="userInfo-top-right">
+      <view class="userInfo-rule">
+        <image 
+          mode="aspectFit"
+          src="/assets/img/doubt.png" 
+          class="userInfo-rule-icon"
+        />
+        规则
+      </view>
+    </view>
+  </view>
+  <!-- 第二行 / 可用租币 赚取 -->
+  <view class="userInfo-mid">
+    <view class="userInfo-mid-left">
+      <view class="label">可用租币</view>
+      <view class="moneyNum">{{ moneyNum }}</view>
+    </view>
+    <view class="userInfo-mid-right">
+      <image 
+        mode="aspectFit"
+        src="/assets/img/addMoney_button.png"
+        style="width: 260rpx; height: 112rpx"/>
+    </view>
+  </view>
+  <!-- 第三行 / 活动卡片 -->
+  <scroll-view class="userInfo-bottom" scroll-x="{{true}}">
+    <view
+      a:for="{{cardList}}"
+      a:for-item="item"
+      class="userInfo-card-item"
+      style="{{backgroundColor: item}}"
+    >
+    </view>
+  </scroll-view>
+</view>

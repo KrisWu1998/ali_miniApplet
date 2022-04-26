@@ -1,19 +1,23 @@
 Page({
   onLoad(query) {
-    my.setCanPullDown({
-      canPullDown:false
-    })
-    // 页面加载
-    console.info(`Page onLoad with query: ${JSON.stringify(query)}`);
+    // my.setCanPullDown({
+    //   canPullDown:false
+    // })
   },
   onReady() {
     // 页面加载完成
   },
   onShow() {
     // 页面显示
+    my.setCanPullDown({
+      canPullDown:false
+    })
   },
   onHide() {
     // 页面隐藏
+    my.setCanPullDown({
+      canPullDown:true
+    })
   },
   onUnload() {
     // 页面被关闭

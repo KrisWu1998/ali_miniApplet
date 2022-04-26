@@ -1,6 +1,7 @@
 Page({
   data: {
-    isShowModal: false, // 提示是否要已读
+    isShowDeleteModal: false, // 控制删除已读Modal
+    isShowReadModal: false, // 控制一键已读Modal
     isShowDetail: false, // 查看详情
     activeIndex: 0,
     currentDetailInfo: {}, // 当前查看的详情数据
@@ -68,8 +69,34 @@ Page({
     }
   },
   onLoad() {
-    my.setCanPullDown({
-      canPullDown:false
+    // my.setCanPullDown({
+    //   canPullDown:false
+    // });
+    // my.startPullDownRefresh()
+    // my.startPullDownRefresh()
+  },
+  onPullDownRefresh() {
+    console.log('refsh')
+    const that = this;
+    setTimeout(() => {
+      my.stopPullDownRefresh({
+        complete (res) {
+          that.updateActiveData();
+        }
+      })
+    }, 1000);
+  },
+  // 下拉刷新当前选项的消息列表
+  updateActiveData () {
+    const { tabs, activeIndex, id, globalData } = this.getCurrentDataId();
+    const infoList = JSON.parse(JSON.stringify(globalData[id]));
+    const currentTabsNum = tabs[activeIndex].number
+    infoList.forEach(item=>item.isRead = false);
+    globalData[id].push(...infoList);
+    tabs[activeIndex].number = currentTabsNum + infoList.length;
+    this.setData({
+      globalData,
+      tabs
     })
   },
   tabsActiveChange (index) {
@@ -77,7 +104,14 @@ Page({
       activeIndex: index
     })
   },
-  // 一键已读
+  // 获取当前消息项id
+  getCurrentDataId () {
+    const { tabs, activeIndex, globalData } = this.data;
+    const currentData = tabs[activeIndex];
+    const { id } = currentData;
+    return {tabs, activeIndex, id, globalData};
+  },
+  //删除已读
   clearMsgData () {
     my.showToast({
       content: `正在加载中...`,
@@ -88,9 +122,49 @@ Page({
         content: `操作成功!`,
         duration: 1000,
       });
-      const { tabs, globalData, activeIndex } = this.data;
-      const currentData = tabs[activeIndex];
-      const { id } = currentData;
+      const {tabs, activeIndex, id, globalData} = this.getCurrentDataId();
+      // 是否存在已读
+      const hasCanRead = globalData[id].some(item=>{
+        return item.isRead
+      });
+      if (!hasCanRead) {
+        return my.showToast({
+          content: `当前未有已读消息!`,
+          duration: 1000,
+        });
+      }
+      const newList = [];
+      globalData[id].forEach(item=>{
+        if (!item.isRead) {
+          newList.push(item)
+        }
+      });
+      globalData[id] = newList
+      const params = {
+        globalData
+      };
+      if (params.globalData[id].length) {
+        // 清空number消息提示标识
+        tabs[activeIndex].number = 0;
+        params.tabs = tabs;
+      }
+      this.setData({...params})
+    }, 1000)
+  },
+  // 一键已读
+  handleReadAllMsgData () {
+    my.showToast({
+      content: `正在加载中...`,
+      duration: 1000,
+    });
+    setTimeout(()=>{
+      my.showToast({
+        content: `操作成功!`,
+        duration: 1000,
+      });
+      const {tabs, activeIndex, id, globalData} = this.getCurrentDataId();
+      
+      // 是否存在未读；
       const hasNoRead = globalData[id].some(item=>{
         return !item.isRead;
       });
@@ -106,6 +180,7 @@ Page({
       globalData[id].forEach(item=>{
         item.isRead = true;
       })
+      console.log(globalData)
       this.setData({
         tabs,
         globalData
@@ -113,16 +188,28 @@ Page({
     }, 1000)
   },
   // 已读前触发
-  beforeClear () {
+  handleRead (e) {
+    const index = e.currentTarget.dataset.index;
+    const dataName = index === 1 ? 'isShowReadModal' : 'isShowDeleteModal';
     this.setData({
-      isShowModal: true
-    })
+      [dataName]: true
+    });
   },
-  // 已读弹窗按钮处理逻辑
-  onButtonClick (e) {
+  // 一键已读弹窗按钮处理逻辑
+  onButtonClick_read (e) {
     const index = e.currentTarget.dataset.index;
     this.setData({
-      isShowModal: false
+      isShowReadModal: false
+    })
+    if (!index) {
+      this.handleReadAllMsgData();
+    }
+  },
+    // 删除已读弹窗按钮处理逻辑
+  onButtonClick_delete (e) {
+    const index = e.currentTarget.dataset.index;
+    this.setData({
+      isShowDeleteModal: false
     })
     if (!index) {
       this.clearMsgData();

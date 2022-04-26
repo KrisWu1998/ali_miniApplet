@@ -1,0 +1,9 @@
+<view class="shop-box">
+  <!-- 用户卡片 -->
+  <user-info-block userInfo="{{userInfo}}"/>
+  <!-- 兑换商城 -->
+  <exchange-block 
+    shopList="{{shopList}}"
+    style="flex: 1"
+  />
+</view>

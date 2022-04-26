@@ -1,8 +1,9 @@
 {
   "pages": [
+    "pages/shop/shop",
     "pages/index/index",
     "pages/myMessage/myMessage"
-     
+    
   ],
   "window": {
     "defaultTitle": "My App",
