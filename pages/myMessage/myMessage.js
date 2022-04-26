@@ -68,6 +68,7 @@ Page({
       2: '/assets/img/message-book.png'
     }
   },
+
   onLoad() {
     // my.setCanPullDown({
     //   canPullDown:false
@@ -75,20 +76,22 @@ Page({
     // my.startPullDownRefresh()
     // my.startPullDownRefresh()
   },
+  
   onPullDownRefresh() {
     console.log('refsh')
     const that = this;
     setTimeout(() => {
       my.stopPullDownRefresh({
         complete (res) {
-          that.updateActiveData();
+          that._updateActiveData();
         }
       })
     }, 1000);
   },
+
   // 下拉刷新当前选项的消息列表
-  updateActiveData () {
-    const { tabs, activeIndex, id, globalData } = this.getCurrentDataId();
+  _updateActiveData () {
+    const { tabs, activeIndex, id, globalData } = this._getCurrentDataId();
     const infoList = JSON.parse(JSON.stringify(globalData[id]));
     const currentTabsNum = tabs[activeIndex].number
     infoList.forEach(item=>item.isRead = false);
@@ -99,20 +102,23 @@ Page({
       tabs
     })
   },
-  tabsActiveChange (index) {
+
+  _onTabsActiveChange (index) {
     this.setData({
       activeIndex: index
     })
   },
+
   // 获取当前消息项id
-  getCurrentDataId () {
+  _getCurrentDataId () {
     const { tabs, activeIndex, globalData } = this.data;
     const currentData = tabs[activeIndex];
     const { id } = currentData;
     return {tabs, activeIndex, id, globalData};
   },
+
   //删除已读
-  clearMsgData () {
+  _clearMsgData () {
     my.showToast({
       content: `正在加载中...`,
       duration: 1000,
@@ -122,7 +128,7 @@ Page({
         content: `操作成功!`,
         duration: 1000,
       });
-      const {tabs, activeIndex, id, globalData} = this.getCurrentDataId();
+      const {tabs, activeIndex, id, globalData} = this._getCurrentDataId();
       // 是否存在已读
       const hasCanRead = globalData[id].some(item=>{
         return item.isRead
@@ -151,8 +157,9 @@ Page({
       this.setData({...params})
     }, 1000)
   },
+
   // 一键已读
-  handleReadAllMsgData () {
+  _handleReadAllMsgData () {
     my.showToast({
       content: `正在加载中...`,
       duration: 1000,
@@ -162,7 +169,7 @@ Page({
         content: `操作成功!`,
         duration: 1000,
       });
-      const {tabs, activeIndex, id, globalData} = this.getCurrentDataId();
+      const {tabs, activeIndex, id, globalData} = this._getCurrentDataId();
       
       // 是否存在未读；
       const hasNoRead = globalData[id].some(item=>{
@@ -187,43 +194,48 @@ Page({
       })
     }, 1000)
   },
+
   // 已读前触发
-  handleRead (e) {
+  _handleRead (e) {
     const index = e.currentTarget.dataset.index;
     const dataName = index === 1 ? 'isShowReadModal' : 'isShowDeleteModal';
     this.setData({
       [dataName]: true
     });
   },
+
   // 一键已读弹窗按钮处理逻辑
-  onButtonClick_read (e) {
+  _onButtonClick_read (e) {
     const index = e.currentTarget.dataset.index;
     this.setData({
       isShowReadModal: false
     })
     if (!index) {
-      this.handleReadAllMsgData();
+      this._handleReadAllMsgData();
     }
   },
+
     // 删除已读弹窗按钮处理逻辑
-  onButtonClick_delete (e) {
+  _onButtonClick_delete (e) {
     const index = e.currentTarget.dataset.index;
     this.setData({
       isShowDeleteModal: false
     })
     if (!index) {
-      this.clearMsgData();
+      this._clearMsgData();
     }
   },
+
   // 查看详情
-  handleDetail (currentData) {
+  _onHandleDetail (currentData) {
     this.setData({
       isShowDetail: true,
       currentDetailInfo: currentData
     })
   },
+
   // 修改详情popup状态
-  changePopupStatus (flag = true) {
+  _onChangePopupStatus (flag = true) {
     this.setData({
       isShowDetail: flag
     })

@@ -17,7 +17,7 @@ Component({
   didUpdate() {},
   didUnmount() {},
   methods: {
-    handleChangeStatus () {
+    onHandleChangeStatus () {
       const { info, parentIndex, childIndex, onConfirm } = this.props;
       if (!info.isGet) {
         onConfirm && onConfirm(parentIndex, childIndex)

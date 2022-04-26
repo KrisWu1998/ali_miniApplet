@@ -61,11 +61,11 @@ Component({
   didUnmount() {},
   methods: {
     // 关闭popup
-    handleClose () {
+    onHandleClose () {
       this.props.onChangePopupStatus(false)
     },
     // 修改是否已领取金币状态
-    setGetMoneyStatus (parantIndex, childIndex) {
+    onSetGetMoneyStatus (parantIndex, childIndex) {
       const { list } = this.data;
       const info = list[parantIndex];
       const currentData = info.child[childIndex];

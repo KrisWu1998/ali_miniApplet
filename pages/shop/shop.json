@@ -2,7 +2,7 @@
   "defaultTitle": "租币商城",
   "pullRefresh": true,
   "usingComponents": {
-    "user-info-block": "/components/shop/userInfoBlock/userInfoBlock",
-    "exchange-block": "/components/shop/exchangeBlock/exchangeBlock"
+    "shop-user-info-block": "/components/shop/userInfoBlock/userInfoBlock",
+    "shop-exchange-block": "/components/shop/exchangeBlock/exchangeBlock"
   }
 }

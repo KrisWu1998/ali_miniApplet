@@ -16,7 +16,7 @@ Component({
   didUpdate() {},
   didUnmount() {},
   methods: {
-    handleChangeActiveIndex (e) {
+    onHandleChangeActiveIndex (e) {
       const { onChange } = this.props;
       const index = e.target.dataset.tabsIndex;
       onChange(index);

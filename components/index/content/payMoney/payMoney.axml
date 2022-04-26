@@ -2,6 +2,7 @@
   <view class="title">
     租币当钱花
   </view>
+  
   <scroll-view class="list-wrap" scroll-x="{{true}}">
     <image
       a:for="{{list}}"

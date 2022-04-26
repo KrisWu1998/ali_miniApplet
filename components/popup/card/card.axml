@@ -1,9 +1,14 @@
 <view class="item">
+  <!-- 任务图标 -->
   <view class="circle" style={{background: info.color}}></view>
+
+  <!-- 任务名称 -->
   <view class="label">
     {{ info.label }}
   </view>
-  <view class={{info.isGet ? 'item-button disable' : 'item-button'}} onTap="handleChangeStatus">
+
+  <!-- 领取租币按钮 -->
+  <view class={{info.isGet ? 'item-button disable' : 'item-button'}} onTap="onHandleChangeStatus">
     {{
       info.isGet ? '已领取' : `+${info.addMoney}租币`
     }}

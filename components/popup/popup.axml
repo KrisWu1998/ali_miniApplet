@@ -5,6 +5,7 @@
   zIndex="999"
   className="myPopup"
 >
+  <!-- 头部 圆角标题区 -->
   <view class="top">
     <view class="title">天天做任务赚翻租币</view>
     <view class="tips">
@@ -12,10 +13,12 @@
       <text class="money">{{ moneyNum }}</text>
       个租币，租币可兑换商品
     </view>
-    <view class="close" onTap="handleClose">
+    <view class="close" onTap="onHandleClose">
       <view class="square"></view>
     </view>
   </view>
+
+  <!-- 内容区滚动 -->
   <scroll-view class="content-wrap" scroll-y="true">
     <view
       a:for="{{list}}"
@@ -25,6 +28,8 @@
       <view class="title">
         {{item.label}}
       </view>
+
+      <!-- 每一项任务 -->
       <item-card
         a:for="{{(item.child || [])}}"
         a:for-item="childItem"
@@ -32,7 +37,7 @@
         info={{childItem}}
         parentIndex={{ index }}
         childIndex={{ childIndex }}
-        onConfirm="setGetMoneyStatus"
+        onConfirm="onSetGetMoneyStatus"
       />
     </view>
   </scroll-view >

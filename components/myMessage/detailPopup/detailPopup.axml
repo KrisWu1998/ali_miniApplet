@@ -5,37 +5,25 @@
   zIndex="999"
   className="message-popup"
 >
-  <view
-    class="message-detail-content"
-  >
-    <scroll-view
-      scroll-y="{{true}}"
-      style="height: 100%"
-    >
-      <view
-        class="message-detail-content-title"
-      >
+  <!-- 内容区 -->
+  <view class="message-detail-content">
+    <scroll-view scroll-y="{{true}}" style="height: 100%">
+      <view class="message-detail-content-title">
         {{ info.title }}
       </view>
-      <view
-        class="message-detail-content-body"
-      >
+      <view class="message-detail-content-body">
         {{ info.content }}
       </view>
     </scroll-view>
   </view>
-  <view
-    class="message-detail-bottom"
-  >
-    <view
-     class="message-detail-bottom-delete" 
-     onTap="handleClose"
-    >
+
+  <!-- 底部按钮 -->
+  <view class="message-detail-bottom">
+    <view class="message-detail-bottom-delete" onTap="onHandleClose">
       删除
     </view>
-    <view
-      class="message-detail-bottom-submit" 
-      onTap="handleClose"
-    >确定</view>
+    <view class="message-detail-bottom-submit" onTap="onHandleClose">
+      确定
+    </view>
   </view>
 </popup>

@@ -1,4 +1,7 @@
 <view class="wrap">
+  <!-- 走路赚租币 背景打底 -->
   <header />
+
+  <!-- 整个页面内容区 层级比背景打底高 -->
   <content />
 </view>

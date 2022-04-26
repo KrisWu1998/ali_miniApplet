@@ -16,6 +16,7 @@
         style="width: 20rpx; height: 20rpx; margin-left: 8rpx"/>
     </view>
   </view>
+
   <!-- 价格区间 选项卡 -->
   <scroll-view class="exchangeBlock-mid" scroll-x="{{true}}">
     <view
@@ -25,6 +26,7 @@
       {{ item.label }}
     </view>
   </scroll-view>
+  
   <!-- 商品列表 -->
   <view class="exchangeBlock-bottom">
     <view 

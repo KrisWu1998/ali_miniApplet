@@ -16,7 +16,7 @@ Component({
   didUpdate() {},
   didUnmount() {},
   methods: {
-    handleClose () {
+    onHandleClose () {
       const { onConfirm } = this.props;
       onConfirm(false)
     }

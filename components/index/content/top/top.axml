@@ -6,7 +6,7 @@
         style="width: 56rpx; height: 72rpx"
         src="/assets/img/message.png"
         mode="aspectFit"
-        onTap="goMessagePage"
+        onTap="onGoMessagePage"
       >
       </image>
       <view
@@ -15,6 +15,7 @@
         2
       </view>
     </view>
+
     <!-- 规则 -->
     <view class="left-icon">
       <image
@@ -24,6 +25,7 @@
       >
       </image>
     </view>
+
   </view>
   <view class="top-right">
     <!-- 金币 -->
@@ -33,7 +35,7 @@
         top: '40rpx',
         fontSize: '32rpx'
       }}
-      onTap="handlePopup"
+      onTap="onHandlePopup"
     >
       <image
         class="icon-money"
@@ -42,6 +44,7 @@
       />
       {{ userMoney }}
     </view>
+
     <!-- 签到 -->
     <view 
       class="bartype"
@@ -79,6 +82,7 @@
         />
       </view>
     </view>
+
     <!-- 步数 -->
     <view class="step-wrap"> 
       <view class="circle">
@@ -96,7 +100,7 @@
         mode="aspectFit"
         src="/assets/img/girl.png"
       />
-      <view class="step-button" onTap="handleGoShop">
+      <view class="step-button" onTap="onHandleGoShop">
         瓜分888现金
       </view>
     </view>

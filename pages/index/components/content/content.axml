@@ -1,23 +1,28 @@
-<!-- <view style="height: 100vh; overflow-y:hidden;"> -->
 <scroll-view class="content-box" scroll-y="{{true}}" style="height: 100%">
   <view style="height:calc(100vw+10rpx);">
-    <!-- 背面打底 (走路赚租币) -->
+    <!-- 背面打底 (走路赚租币) 图标 -->
     <content-top 
-      onChangePopupStatus="changePopupStatus"
+      onChangePopupStatus="onChangePopupStatus"
       userMoney={{userMoney}}
     />
-    <!-- popup -->
+
+    <!-- 内容区滑块 -->
     <view class="list" scroll-y="true">
-      <!-- 头部箭头 -->
+      <!-- 头部胶囊 -->
       <view class="nail"></view>
+
+      <!-- 租币当前花 -->
       <pay-money></pay-money>
+
+      <!-- 租物推荐 -->
       <recommend></recommend>
     </view>
+
+    <!-- 租币领取任务 -->
     <my-popup 
       isShow={{isShowPopup}}
-      onChangePopupStatus="changePopupStatus"
-      onAddUserMoney="addUserMoney"
+      onChangePopupStatus="onChangePopupStatus"
+      onAddUserMoney="onAddUserMoney"
     />
   </view>
 </scroll-view>
-<!-- </view> -->

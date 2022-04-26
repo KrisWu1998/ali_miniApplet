@@ -66,6 +66,9 @@ Page({
             my.navigateBack({
               delta: 1
             })
+            my.navigateTo({
+              url: '/pages/index/index',
+            });
           }
         });
       }

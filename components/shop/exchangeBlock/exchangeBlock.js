@@ -40,10 +40,5 @@ Component({
   didMount() {},
   didUpdate() {},
   didUnmount() {},
-  methods: {},
-  onPullDownRefresh() {
-    console.log('refsh')
-    const that = this;
-    console.log(this.ref)
-  },
+  methods: {}
 });

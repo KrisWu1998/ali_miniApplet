@@ -9,10 +9,11 @@ Component({
   didUpdate() {},
   didUnmount() {},
   methods: {
-    changePopupStatus (flag = true) {
+    onChangePopupStatus (flag = true) {
       this.setData({isShowPopup: flag})
     },
-    addUserMoney (num) {
+    
+    onAddUserMoney (num) {
       const { userMoney } = this.data;
       this.setData({
         userMoney: userMoney + num

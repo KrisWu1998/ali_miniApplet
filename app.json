@@ -1,8 +1,10 @@
 {
   "pages": [
-    "pages/shop/shop",
     "pages/index/index",
-    "pages/myMessage/myMessage"
+    "pages/myMessage/myMessage",
+    "pages/shop/shop"
+    
+    
     
   ],
   "window": {

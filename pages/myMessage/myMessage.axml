@@ -1,17 +1,20 @@
 <view class="myMessage-box">
+  <!-- 选项卡 -->
   <view class="myMessage-tabs-wrap">
-    <my-tabs
+    <message-tabs
       tabs="{{ tabs }}"
       activeIndex="{{ activeIndex }}"
-      onChange="tabsActiveChange"
+      onChange="_onTabsActiveChange"
     />
   </view>
+
+  <!-- 操作栏 - 删除/一键已读 -->
   <view class="handle-box">
     <view
       a:for="{{handleList}}"
       a:for-item="item"
       class="handle-item"
-      onTap="handleRead"
+      onTap="_handleRead"
       data-index="{{index}}"
     >
       <image 
@@ -22,6 +25,8 @@
       {{ item.label }}
     </view>
   </view>
+
+  <!-- 内容区 -->
   <view 
     a:for="{{tabs}}"
     a:for-item="tabsItem"
@@ -38,18 +43,20 @@
         a:for-index="itemIndex"
         info={{ itemInfo }}
         iconUrl={{ iconUrlList[tabsItem.id] }}
-        onHandleDetail="handleDetail"
+        onHandleDetail="_onHandleDetail"
       />
       <!-- <view class="no-more">没有更多了</view> -->
     </view>
-    <empty-page
+    <message-empty-page
       a:else
     />
   </view>
+
+  <!-- 删除/一键已读 模态框提示 -->
   <modal
 		show="{{ isShowReadModal }}"
     showClose="{{ false }}"
-    onButtonClick="onButtonClick_read"
+    onButtonClick="_onButtonClick_read"
     buttons="{{ [
       {
         text: '确认已读',
@@ -68,7 +75,7 @@
   <modal
 		show="{{ isShowDeleteModal }}"
     showClose="{{ false }}"
-    onButtonClick="onButtonClick_delete"
+    onButtonClick="_onButtonClick_delete"
     buttons="{{ [
       {
         text: '确认删除',
@@ -84,9 +91,11 @@
 	>
 		是否确认要删除已读通知
   </modal>
-  <detail-popup
+
+  <!-- 详情popup -->
+  <message-detail-popup
     isShow={{ isShowDetail }}
     info={{ currentDetailInfo }}
-    onConfirm="changePopupStatus"
+    onConfirm="_onChangePopupStatus"
   />
 </view>

@@ -39,15 +39,13 @@ Component({
   didUnmount() {},
   methods: {
     handleMore () {
-      console.log('handleMore')
       this.setData({loading: true})
       setTimeout(() => {
         const { list } = this.data;
         const info  = JSON.parse(JSON.stringify(list));
         list.push(...info);
         this.setData({list, loading: false})
-      }, 1000);
-      
+      }, 1000);    
     }
   },
 });

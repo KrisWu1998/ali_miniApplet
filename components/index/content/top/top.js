@@ -40,17 +40,17 @@ Component({
   didUpdate() {},
   didUnmount() {},
   methods: {
-    handlePopup () {
+    onHandlePopup () {
       this.props.onChangePopupStatus();
     },
     // 跳转 我的消息
-    goMessagePage () {
+    onGoMessagePage () {
       my.navigateTo({ 
         url: "/pages/myMessage/myMessage"
       })
     },
     // 跳转 租币商城
-    handleGoShop () {
+    onHandleGoShop () {
       my.navigateTo({
         url: "/pages/shop/shop"
       })

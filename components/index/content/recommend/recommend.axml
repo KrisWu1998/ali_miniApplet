@@ -1,8 +1,11 @@
 <view class="recommend-container">
   <view class="title">租物推荐</view>
+
+  <!-- 推荐商品列表 -->
   <view
     class="list-wrap"
   >
+    <!-- 每一个商品显示块 -->
     <view 
       a:for="{{list}}"
       a:for-item="item"
@@ -24,6 +27,8 @@
         </view>
       </view>
     </view>
+
+    <!-- 更多 or Loading -->
     <view class="bottom">
       <view a:if="{{ loading }}">loading...</view>
       <view a:else class="more" onTap="handleMore">
@@ -34,5 +39,6 @@
         />
       </view>
     </view>
+    
   </view>
 </view>

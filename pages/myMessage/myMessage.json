@@ -2,10 +2,10 @@
   "defaultTitle": "消息",
   "pullRefresh": true,
   "usingComponents": {
-    "my-tabs": "/components/tabs/tabs",
+    "message-tabs": "/components/tabs/tabs",
     "message-item-card": "/components/myMessage/messageItem/messageItem",
-    "empty-page": "/components/empty/empty",
+    "message-empty-page": "/components/empty/empty",
     "modal": "../../node_modules/mini-ali-ui/es/modal/index",
-    "detail-popup": "/components/myMessage/detailPopup/detailPopup"
+    "message-detail-popup": "/components/myMessage/detailPopup/detailPopup"
   }
 }

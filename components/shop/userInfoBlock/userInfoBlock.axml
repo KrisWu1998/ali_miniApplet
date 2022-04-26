@@ -22,6 +22,7 @@
       </view>
     </view>
   </view>
+
   <!-- 第二行 / 可用租币 赚取 -->
   <view class="userInfo-mid">
     <view class="userInfo-mid-left">
@@ -35,6 +36,7 @@
         style="width: 260rpx; height: 112rpx"/>
     </view>
   </view>
+  
   <!-- 第三行 / 活动卡片 -->
   <scroll-view class="userInfo-bottom" scroll-x="{{true}}">
     <view

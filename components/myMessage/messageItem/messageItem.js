@@ -16,7 +16,7 @@ Component({
   didUpdate() {},
   didUnmount() {},
   methods: {
-    confirm () {
+    onConfirm () {
       const { info, onHandleDetail } = this.props;
       onHandleDetail(info);
     }
