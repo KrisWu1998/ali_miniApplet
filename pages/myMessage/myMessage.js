@@ -149,7 +149,7 @@ Page({
       const params = {
         globalData
       };
-      if (params.globalData[id].length) {
+      if (!params.globalData[id].length) {
         // 清空number消息提示标识
         tabs[activeIndex].number = 0;
         params.tabs = tabs;

@@ -39,6 +39,9 @@
           mode="aspectFit"
           src="{{ shopItem.cover }}"
           style="width: 335rpx; height: 272rpx"/>
+        <view class="tags" a:if="{{ shopItem.tags }}"> 
+          {{ shopItem.tags }}
+        </view>
       </view>
       <view class="shopItem-car-bottom">
         <view class="label">{{ shopItem.title }}</view>
@@ -56,4 +59,15 @@
       </view>
     </view>
   </view>
+
+  <!-- 赚取更多租币 -->
+  <view class="addMore-wrap">
+    <view class="addMore-button">
+      赚取更多租币
+      <image 
+        mode="aspectFit"
+        src="/assets/img/arrows_right_orange.png"
+        style="width: 20rpx; height: 20rpx; margin-left: 8rpx"/>
+      </view>
+    </view>
 </view>

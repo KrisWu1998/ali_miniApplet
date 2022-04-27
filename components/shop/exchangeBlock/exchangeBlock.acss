@@ -63,8 +63,19 @@
   margin-right: 0;
 }
 .exchangeBlock-box>.exchangeBlock-bottom>.exchangeBlock-shopItem-card>.shopItem-card-imgBlock {
+  position: relative;
   width: 335rpx;
   height: 272rpx;
+}
+.exchangeBlock-box>.exchangeBlock-bottom>.exchangeBlock-shopItem-card>.shopItem-card-imgBlock>.tags {
+  position: absolute;
+  top: 24rpx;
+  right: 15rpx;
+  padding: 6rpx 12rpx;
+  font-size: 22rpx;
+  color: #FFF;
+  background-image: linear-gradient(#FF9A3C, #FF611C);
+  border-radius: 4rpx;
 }
 .exchangeBlock-box>.exchangeBlock-bottom>.exchangeBlock-shopItem-card>.shopItem-car-bottom {
   padding: 10rpx 11rpx 24rpx 20rpx;
@@ -90,4 +101,18 @@
 .exchangeBlock-box>.exchangeBlock-bottom>.exchangeBlock-shopItem-card>.shopItem-car-bottom>.case>.case_nonMoney {
   margin-right: 10rpx;
   text-decoration: line-through;
+}
+/* 赚取更多租币 按钮 */
+.exchangeBlock-box>.addMore-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 14rpx;
+  padding-bottom: 50rpx;
+}
+.exchangeBlock-box>.addMore-wrap>.addMore-button {
+  padding: 17rpx 30rpx;
+  font-size: 28rpx;
+  color: #FF6737;
+  border: 2rpx solid #FF6737;
+  border-radius: 30.5rpx;
 }

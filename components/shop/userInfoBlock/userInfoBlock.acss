@@ -95,7 +95,19 @@
 }
 .userInfo-box>.userInfo-bottom>.userInfo-card-item {
   display: inline-block;
+  position: relative;
   width: 268rpx;
   height: 137rpx;
   margin-right: 20rpx;
+}
+.userInfo-box>.userInfo-bottom>.userInfo-card-item::after {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  right: 0;
+  bottom: 0;
+  width: 120rpx;
+  height: 100rpx;
+  background: url('/assets//img/rrz-cion.png') no-repeat;
+  background-size: 100% 100%;
 }

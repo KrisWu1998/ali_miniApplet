@@ -3,7 +3,7 @@ Component({
   data: {
     moneyNum: 1560,
     cardList: [
-      'lightgoldenrodyellow',
+      'lightpink',
       'lightblue',
       'lightcoral',
       'orange',
