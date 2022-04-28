@@ -2,7 +2,8 @@ Component({
   mixins: [],
   data: {
     isShowPopup: false,
-    userMoney: 32
+    userMoney: 32,
+    positionVal: 'relative'
   },
   props: {},
   didMount() {},
@@ -10,7 +11,13 @@ Component({
   didUnmount() {},
   methods: {
     onChangePopupStatus (flag = true) {
-      this.setData({isShowPopup: flag})
+      // my.setCanPullDown({
+      //   canPullDown:false
+      // })
+      this.setData({
+        isShowPopup: flag,
+        positionVal: flag ? 'fixed' : 'relative'
+      })
     },
     
     onAddUserMoney (num) {

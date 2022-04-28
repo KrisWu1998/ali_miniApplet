@@ -1,3 +1,7 @@
+.content-scroll-wrap {
+  height: 100%;
+  overflow: hidden;
+}
 .content-box {
   /* position: fixed; */
   position: relative;
@@ -5,9 +9,11 @@
   width: 100%;
   padding-top: 718rpx;
   white-space: nowrap;
-  -webkit-overflow-scrolling:touch;
+  /* -webkit-overflow-scrolling:touch; */
+  overflow: hidden;
 }
-.content-box::-webkit-scrollbar {
+::-webkit-scrollbar {
+  display: none;
   width: 0;
   height: 0;
   color: transparent;

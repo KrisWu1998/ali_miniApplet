@@ -1,5 +1,10 @@
-<scroll-view class="content-box" scroll-y="{{true}}" style="height: 100%">
-  <view style="height:calc(100vw+10rpx);">
+<view class="content-scroll-wrap">
+  <scroll-view
+    class="content-box"
+    scroll-y="{{true}}"
+    style="{{`height: calc(100% - 718rpx); position: ${positionVal}`}}"
+    
+    >
     <!-- 背面打底 (走路赚租币) 图标 -->
     <content-top 
       onChangePopupStatus="onChangePopupStatus"
@@ -17,12 +22,13 @@
       <!-- 租物推荐 -->
       <recommend></recommend>
     </view>
-
-    <!-- 租币领取任务 -->
-    <my-popup 
-      isShow={{isShowPopup}}
-      onChangePopupStatus="onChangePopupStatus"
-      onAddUserMoney="onAddUserMoney"
-    />
-  </view>
-</scroll-view>
+    <!-- </view> -->
+  </scroll-view>
+  
+  <!-- 租币领取任务 -->
+  <my-popup 
+    isShow={{isShowPopup}}
+    onChangePopupStatus="onChangePopupStatus"
+    onAddUserMoney="onAddUserMoney"
+  />
+</view>

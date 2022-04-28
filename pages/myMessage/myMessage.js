@@ -66,6 +66,22 @@ Page({
     iconUrlList: {
       1: '/assets/img/message-tips.png',
       2: '/assets/img/message-book.png'
+    },
+    globalData_info: {
+      1: {
+          id: 11,
+          title: '活动通知',
+          content: '恭喜获得20个租币，请查收!',
+          time: '2020-03-23 14:30',
+          isRead: false
+      },
+      2: {
+          id: 21,
+          title: '订单已取消',
+          content: '订单已成功取消，感谢您的关注',
+          time: '2020-03-23 14:30',
+          isRead: false
+      }
     }
   },
 
@@ -91,12 +107,11 @@ Page({
 
   // 下拉刷新当前选项的消息列表
   _updateActiveData () {
-    const { tabs, activeIndex, id, globalData } = this._getCurrentDataId();
-    const infoList = JSON.parse(JSON.stringify(globalData[id]));
+    const { tabs, activeIndex, id, globalData, globalData_info } = this._getCurrentDataId();
+    const infoList = JSON.parse(JSON.stringify(globalData_info[id]));
     const currentTabsNum = tabs[activeIndex].number
-    infoList.forEach(item=>item.isRead = false);
-    globalData[id].push(...infoList);
-    tabs[activeIndex].number = currentTabsNum + infoList.length;
+    globalData[id].push(infoList);
+    tabs[activeIndex].number = currentTabsNum + 1;
     this.setData({
       globalData,
       tabs
@@ -111,10 +126,10 @@ Page({
 
   // 获取当前消息项id
   _getCurrentDataId () {
-    const { tabs, activeIndex, globalData } = this.data;
+    const { tabs, activeIndex, globalData, globalData_info } = this.data;
     const currentData = tabs[activeIndex];
     const { id } = currentData;
-    return {tabs, activeIndex, id, globalData};
+    return {tabs, activeIndex, id, globalData, globalData_info};
   },
 
   //删除已读

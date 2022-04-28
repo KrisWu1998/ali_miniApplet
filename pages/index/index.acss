@@ -1,6 +1,13 @@
 .wrap {
   width: 750rpx;
-  min-height: 100vh;
+  height: 100vh;
   padding: 0;
   margin: 0;
+  /* overflow: hidden; */
 }
+/* ::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  color: transparent;
+} */

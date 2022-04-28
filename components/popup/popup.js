@@ -62,7 +62,7 @@ Component({
   methods: {
     // 关闭popup
     onHandleClose () {
-      this.props.onChangePopupStatus(false)
+      this.props.onChangePopupStatus(false);
     },
     // 修改是否已领取金币状态
     onSetGetMoneyStatus (parantIndex, childIndex) {
